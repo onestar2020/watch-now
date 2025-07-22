@@ -71,6 +71,16 @@
       width: 100%;
       border-radius: 5px;
     }
+    .view-more-btn {
+      min-width: 120px;
+      padding: 10px;
+      font-size: 14px;
+      background-color: #e50914;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
   </style>
 </head>
 
@@ -123,9 +133,10 @@
   <section class="genre-display">
     <h2 id="genre-title">Select a Genre</h2>
     <div class="genre-results" id="genre-results"></div>
+    <div style="padding: 20px; text-align: center;">
+      <button class="view-more-btn" id="view-more" onclick="loadMoreGenre()">View More</button>
+    </div>
   </section>
-
-
 
   <!-- Modal Preview -->
   <div class="modal" id="modal">
