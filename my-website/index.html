@@ -16,47 +16,65 @@
   <!-- Genre Script -->
   <script src="js/home.js" defer></script>
 
-  <!-- Inline Genre Styles -->
+  <!-- Inline Styles -->
   <style>
     .genre-row {
       margin: 20px 0;
-      padding: 10px 20px;
       background: #111;
     }
+
+    .genre-bar-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      padding: 0 60px;
+      box-sizing: border-box;
+    }
+
     .genre-list {
       display: flex;
+      gap: 12px;
       flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 10px;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
+
+    .genre-list::-webkit-scrollbar {
+      display: none;
+    }
+
     .genre-btn {
-      flex: 1 1 calc(12.5% - 10px);
-      min-width: 100px;
-      padding: 10px;
-      font-size: 16px;
-      background-color: #222;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background-color: rgba(255, 255, 255, 0.08);
       color: #fff;
-      border: 1px solid #333;
-      border-radius: 5px;
+      font-size: 14px;
       cursor: pointer;
-      transition: background 0.3s;
+      transition: background 0.3s ease;
+      white-space: nowrap;
     }
+
     .genre-btn:hover {
-      background-color: #e50914;
+      background-color: rgba(255, 255, 255, 0.2);
     }
+
     .genre-results {
       display: flex;
       overflow-x: auto;
       gap: 15px;
       padding: 20px;
     }
+
     .genre-results::-webkit-scrollbar {
       height: 8px;
     }
+
     .genre-results::-webkit-scrollbar-thumb {
       background-color: #e50914;
       border-radius: 10px;
     }
+
     .genre-card {
       background-color: #222;
       border-radius: 8px;
@@ -67,16 +85,19 @@
       flex-shrink: 0;
       cursor: pointer;
     }
+
     .genre-card img {
       width: 100%;
       border-radius: 5px;
     }
+
     .pagination {
       display: flex;
       justify-content: center;
       gap: 10px;
       padding-bottom: 30px;
     }
+
     .pagination button {
       padding: 10px 16px;
       font-size: 14px;
@@ -86,6 +107,7 @@
       color: #fff;
       cursor: pointer;
     }
+
     .pagination .page-label {
       padding: 10px 16px;
       font-size: 14px;
@@ -93,6 +115,13 @@
       color: #fff;
       border-radius: 4px;
       cursor: default;
+    }
+
+    @media (max-width: 768px) {
+      .genre-bar-wrapper {
+        justify-content: center;
+        padding: 0 20px;
+      }
     }
   </style>
 </head>
@@ -130,15 +159,17 @@
 
   <!-- Genre Selector -->
   <section class="genre-row">
-    <div class="genre-list">
-      <button class="genre-btn" onclick="loadGenre('28', 'Action')">Action</button>
-      <button class="genre-btn" onclick="loadGenre('12', 'Adventure')">Adventure</button>
-      <button class="genre-btn" onclick="loadGenre('35', 'Comedy')">Comedy</button>
-      <button class="genre-btn" onclick="loadGenre('80', 'Crime')">Crime</button>
-      <button class="genre-btn" onclick="loadGenre('18', 'Drama')">Drama</button>
-      <button class="genre-btn" onclick="loadGenre('14', 'Fantasy')">Fantasy</button>
-      <button class="genre-btn" onclick="loadGenre('878', 'Sci-Fi')">Sci-Fi</button>
-      <button class="genre-btn" onclick="loadGenre('53', 'Thriller')">Thriller</button>
+    <div class="genre-bar-wrapper">
+      <div class="genre-list">
+        <button class="genre-btn" onclick="loadGenre('28', 'Action')">Action</button>
+        <button class="genre-btn" onclick="loadGenre('12', 'Adventure')">Adventure</button>
+        <button class="genre-btn" onclick="loadGenre('35', 'Comedy')">Comedy</button>
+        <button class="genre-btn" onclick="loadGenre('80', 'Crime')">Crime</button>
+        <button class="genre-btn" onclick="loadGenre('18', 'Drama')">Drama</button>
+        <button class="genre-btn" onclick="loadGenre('14', 'Fantasy')">Fantasy</button>
+        <button class="genre-btn" onclick="loadGenre('878', 'Sci-Fi')">Sci-Fi</button>
+        <button class="genre-btn" onclick="loadGenre('53', 'Thriller')">Thriller</button>
+      </div>
     </div>
   </section>
 
