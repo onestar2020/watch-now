@@ -341,6 +341,100 @@ body {
 .footer-links a:hover {
   color: white;
 }
+/* === GENRE NAVIGATION === */
+.genre-nav {
+  display: flex;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 20px 60px;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #333;
+  scrollbar-width: none;
+}
+.genre-nav::-webkit-scrollbar {
+  display: none;
+}
+.genre-button {
+  flex: 0 0 auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+  text-align: center;
+  min-width: 120px;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
+}
+.genre-button:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+/* === HORIZONTAL GENRE ROW === */
+.genre-row {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+  gap: 16px;
+  padding: 20px;
+  scrollbar-width: none;
+}
+.genre-row::-webkit-scrollbar {
+  display: none;
+}
+
+/* === INDIVIDUAL MOVIE CARD === */
+.genre-card {
+  flex: 0 0 auto;
+  min-width: 160px;
+  max-width: 180px;
+  background: #111;
+  color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+.genre-card:hover {
+  transform: scale(1.05);
+}
+.genre-card img {
+  width: 100%;
+  display: block;
+  border-bottom: 1px solid #333;
+}
+.genre-card h3 {
+  font-size: 14px;
+  margin: 10px 8px;
+  line-height: 1.2em;
+}
+
+/* === MOVIE DESCRIPTION ON HOVER === */
+.genre-description {
+  position: absolute;
+  top: 0;
+  left: 170px;
+  width: 300px;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 15px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+.genre-card:hover .genre-description {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
@@ -419,87 +513,7 @@ body {
     font-size: 0.9rem;
     padding: 8px 16px;
   }
-}
-/* === GENRE NAVIGATION === */
-.genre-nav {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  padding: 20px 60px;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #333;
-  scrollbar-width: none;
-}
-.genre-nav::-webkit-scrollbar {
-  display: none;
-}
-.genre-button {
-  flex: 0 0 auto;
-  padding: 12px 24px;
-  font-size: 16px;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.05);
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  cursor: pointer;
-  text-align: center;
-  min-width: 120px;
-  white-space: nowrap;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
-}
-.genre-button:hover {
-  background: rgba(255, 255, 255, 0.1);
-}
 
-
-/* === MOVIE LIST INSIDE GENRE === */
-.genre-list {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  gap: 16px;
-}
-.genre-card {
-  min-width: 160px;
-  flex: 0 0 auto;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-  position: relative;
-}
-.genre-card:hover {
-  transform: scale(1.05);
-}
-.genre-card img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* === MOVIE DESCRIPTION ON HOVER === */
-.genre-description {
-  position: absolute;
-  top: 0;
-  left: 170px;
-  width: 300px;
-  background: rgba(18, 18, 18, 0.75);
-  backdrop-filter: blur(10px);
-  color: #fff;
-  padding: 15px;
-  font-size: 0.85rem;
-  opacity: 0;
-  transition: opacity 0.3s ease;
-  border-radius: 10px;
-  z-index: 5;
-  pointer-events: none;
-}
-.genre-card:hover .genre-description {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* === RESPONSIVE STYLES === */
-@media (max-width: 768px) {
   .genre-description {
     display: none;
   }
@@ -527,8 +541,17 @@ body {
     font-size: 1rem;
   }
 
-  .genre-list {
+  .genre-row {
     flex-direction: row;
     overflow-x: auto;
+    padding: 10px 15px;
+  }
+
+  .genre-card {
+    min-width: 140px;
+  }
+
+  .genre-card h3 {
+    font-size: 13px;
   }
 }
