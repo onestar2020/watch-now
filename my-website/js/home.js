@@ -15,9 +15,9 @@ const genreMap = {
 };
 
 async function fetchByGenre(genreId) {
-  const res = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=popularity.desc`);
+  const res = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=popularity.desc&language=en-US&page=1&include_adult=false`);
   const data = await res.json();
-  return data.results;
+  return data.results || [];
 }
 
 function displayGenreItems(items) {
@@ -27,7 +27,7 @@ function displayGenreItems(items) {
   const row = document.createElement('div');
   row.className = 'genre-row';
 
-  items.forEach(item => {
+  items.filter(item => item.poster_path).forEach(item => {
     const wrapper = document.createElement('div');
     wrapper.className = 'poster-wrapper';
 
@@ -36,6 +36,7 @@ function displayGenreItems(items) {
     img.alt = item.title || item.name;
     img.className = 'genre-poster';
     img.onmouseenter = () => showDescription(item);
+    img.onclick = () => showDetails(item);
 
     wrapper.appendChild(img);
     row.appendChild(wrapper);
@@ -69,9 +70,11 @@ function showDescription(item) {
 function setupGenreButtons() {
   document.querySelectorAll('.genre-btn').forEach(btn => {
     btn.onclick = async () => {
-      const genre = btn.textContent;
+      const genre = btn.textContent.trim();
       document.getElementById('genre-title').textContent = `Top Picks in ${genre}`;
-      const results = await fetchByGenre(genreMap[genre]);
+      const genreId = genreMap[genre];
+      if (!genreId) return;
+      const results = await fetchByGenre(genreId);
       displayGenreItems(results);
     };
   });
@@ -89,7 +92,7 @@ function showDetails(item) {
 
 function changeServer() {
   const server = document.getElementById('server').value;
-  const type = currentItem.media_type === 'movie' ? 'movie' : 'tv';
+  const type = currentItem.media_type === 'tv' ? 'tv' : 'movie';
   let embedURL = '';
 
   if (server === 'vidsrc.cc') {
