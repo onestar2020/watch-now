@@ -453,30 +453,6 @@ body {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* === TOP PICKS SECTION === */
-.top-picks-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 16px;
-  padding: 30px 60px;
-  overflow-x: auto;
-}
-.top-picks-label {
-  flex-shrink: 0;
-  font-size: 1.2rem;
-  font-weight: bold;
-  color: #fff;
-  background-color: #e50914;
-  border-radius: 8px;
-  padding: 20px 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 250px;
-  min-width: 100px;
-  text-align: center;
-}
 
 /* === MOVIE LIST INSIDE GENRE === */
 .genre-list {
