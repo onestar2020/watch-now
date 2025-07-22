@@ -344,14 +344,17 @@ body {
 /* === GENRE NAVIGATION === */
 .genre-nav {
   display: flex;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
   overflow-x: auto;
   white-space: nowrap;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #333;
-  padding: 0;
+  padding: 12px 20px;
   margin: 0;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 .genre-nav::-webkit-scrollbar {
   display: none;
@@ -360,11 +363,11 @@ body {
   flex: 0 0 auto;
   padding: 14px 24px;
   font-size: 16px;
-  border-radius: 0;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
   border: none;
-  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  margin-right: 10px;
   cursor: pointer;
   text-align: center;
   white-space: nowrap;
