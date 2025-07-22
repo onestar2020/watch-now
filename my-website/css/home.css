@@ -341,41 +341,48 @@ body {
 .footer-links a:hover {
   color: white;
 }
-/* === GENRE NAVIGATION === */
-.genre-nav {
-  display: flex;
-  overflow-x: auto;
-  gap: 16px;
-  padding: 20px 60px;
+/* === FULL-WIDTH GENRE NAVIGATION === */
+.genre-row {
+  width: 100%;
+  margin: 0;
+  padding: 0;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #333;
-  scrollbar-width: none;
 }
-.genre-nav::-webkit-scrollbar {
-  display: none;
+
+.genre-list {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
-.genre-button {
-  flex: 0 0 auto;
-  padding: 12px 24px;
+
+.genre-btn {
+  flex: 1 1 12.5%; /* 8 buttons in full width */
+  padding: 14px 0;
   font-size: 16px;
-  border-radius: 30px;
-  background: rgba(255, 255, 255, 0.05);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.05);
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
   cursor: pointer;
   text-align: center;
-  min-width: 120px;
   white-space: nowrap;
-  transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
+  transition: background 0.3s ease;
 }
-.genre-button:hover {
+
+.genre-btn:last-child {
+  border-right: none;
+}
+
+.genre-btn:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* === HORIZONTAL GENRE ROW === */
-.genre-row {
+/* === HORIZONTAL GENRE MOVIE ROW === */
+.genre-row-movies {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
@@ -383,7 +390,8 @@ body {
   padding: 20px;
   scrollbar-width: none;
 }
-.genre-row::-webkit-scrollbar {
+
+.genre-row-movies::-webkit-scrollbar {
   display: none;
 }
 
@@ -518,14 +526,10 @@ body {
     display: none;
   }
 
-  .genre-nav {
-    padding: 15px 20px;
-  }
-
-  .genre-button {
-    padding: 10px 16px;
+  .genre-btn {
+    flex: 1 1 50%; /* 2 per row on small screens */
+    padding: 12px 0;
     font-size: 14px;
-    min-width: 90px;
   }
 
   .top-picks-wrapper {
@@ -541,7 +545,7 @@ body {
     font-size: 1rem;
   }
 
-  .genre-row {
+  .genre-row-movies {
     flex-direction: row;
     overflow-x: auto;
     padding: 10px 15px;
@@ -555,5 +559,3 @@ body {
     font-size: 13px;
   }
 }
-
-
