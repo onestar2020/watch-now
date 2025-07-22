@@ -4,18 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WATCH-NOW</title>
-  
+
   <!-- Styles -->
   <link rel="stylesheet" href="css/home.css">
   <link rel="preload" href="css/home.css" as="style">
-  
+
   <!-- Manifest & Fonts -->
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
   <!-- Genre Script -->
   <script src="js/home.js" defer></script>
-
 
   <!-- Inline Genre Styles -->
   <style>
@@ -44,6 +43,33 @@
     }
     .genre-btn:hover {
       background-color: #e50914;
+    }
+    .genre-results {
+      display: flex;
+      overflow-x: auto;
+      gap: 15px;
+      padding: 20px;
+    }
+    .genre-results::-webkit-scrollbar {
+      height: 8px;
+    }
+    .genre-results::-webkit-scrollbar-thumb {
+      background-color: #e50914;
+      border-radius: 10px;
+    }
+    .genre-card {
+      background-color: #222;
+      border-radius: 8px;
+      padding: 10px;
+      color: white;
+      min-width: 200px;
+      max-width: 200px;
+      flex-shrink: 0;
+      cursor: pointer;
+    }
+    .genre-card img {
+      width: 100%;
+      border-radius: 5px;
     }
   </style>
 </head>
@@ -82,15 +108,21 @@
   <!-- Genre Selector -->
   <section class="genre-row">
     <div class="genre-list">
-      <button class="genre-btn" onclick="loadGenre('28')">Action</button>
-      <button class="genre-btn" onclick="loadGenre('12')">Adventure</button>
-      <button class="genre-btn" onclick="loadGenre('35')">Comedy</button>
-      <button class="genre-btn" onclick="loadGenre('80')">Crime</button>
-      <button class="genre-btn" onclick="loadGenre('18')">Drama</button>
-      <button class="genre-btn" onclick="loadGenre('14')">Fantasy</button>
-      <button class="genre-btn" onclick="loadGenre('878')">Sci-Fi</button>
-      <button class="genre-btn" onclick="loadGenre('53')">Thriller</button>
+      <button class="genre-btn" onclick="loadGenre('28', 'Action')">Action</button>
+      <button class="genre-btn" onclick="loadGenre('12', 'Adventure')">Adventure</button>
+      <button class="genre-btn" onclick="loadGenre('35', 'Comedy')">Comedy</button>
+      <button class="genre-btn" onclick="loadGenre('80', 'Crime')">Crime</button>
+      <button class="genre-btn" onclick="loadGenre('18', 'Drama')">Drama</button>
+      <button class="genre-btn" onclick="loadGenre('14', 'Fantasy')">Fantasy</button>
+      <button class="genre-btn" onclick="loadGenre('878', 'Sci-Fi')">Sci-Fi</button>
+      <button class="genre-btn" onclick="loadGenre('53', 'Thriller')">Thriller</button>
     </div>
+  </section>
+
+  <!-- Genre Title + Results Container -->
+  <section class="genre-display">
+    <h2 id="genre-title">Select a Genre</h2>
+    <div class="genre-results" id="genre-results"></div>
   </section>
 
   <!-- Top Picks Container -->
