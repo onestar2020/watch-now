@@ -33,7 +33,12 @@ function displayGenreItems(items) {
   row.className = 'genre-row';
   container.appendChild(row);
 
+  const seen = new Set();
   items.filter(item => item.poster_path).forEach(item => {
+    const uniqueKey = item.id;
+    if (seen.has(uniqueKey)) return;
+    seen.add(uniqueKey);
+
     const card = document.createElement('div');
     card.className = 'genre-card';
     card.innerHTML = `
