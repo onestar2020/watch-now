@@ -493,26 +493,29 @@ body {
 .top-picks-wrapper {
   display: flex;
   align-items: flex-start;
-  gap: 12px;
-  margin-top: 20px;
+  gap: 16px;
+  padding: 30px 60px;
+  overflow-x: auto;
 }
 
 .top-picks-label {
+  flex-shrink: 0;
   font-size: 1.2rem;
   font-weight: bold;
-  writing-mode: vertical-lr;
-  transform: rotate(180deg);
-  padding: 10px;
-  background-color: #111;
   color: #fff;
+  background-color: #e50914;
   border-radius: 8px;
+  padding: 20px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 250px;
 }
 
 .genre-list {
   display: flex;
   overflow-x: auto;
-  gap: 10px;
-  padding: 10px 0;
+  gap: 16px;
 }
 
 .genre-card {
@@ -520,6 +523,7 @@ body {
   flex: 0 0 auto;
   cursor: pointer;
   transition: transform 0.3s;
+  position: relative;
 }
 
 .genre-card:hover {
@@ -528,13 +532,34 @@ body {
 
 .genre-card img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
+.genre-description {
+  position: absolute;
+  top: 0;
+  left: 170px;
+  width: 300px;
+  background: rgba(18, 18, 18, 0.75);
+  backdrop-filter: blur(10px);
+  color: #fff;
+  padding: 15px;
+  font-size: 0.85rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  border-radius: 10px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.genre-card:hover .genre-description {
+  opacity: 1;
+  pointer-events: auto;
+}
 
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
-  .top-pick-description {
+  .genre-description {
     display: none;
   }
 
@@ -548,14 +573,16 @@ body {
     min-width: 90px;
   }
 
-  .top-picks-section {
+  .top-picks-wrapper {
     flex-direction: column;
     padding: 30px 20px;
   }
 
-  .top-picks-label h2 {
-    writing-mode: horizontal-tb;
-    transform: none;
-    text-align: left;
+  .top-picks-label {
+    height: auto;
+    width: 100%;
+    justify-content: flex-start;
+    padding: 10px;
+    font-size: 1rem;
   }
 }
