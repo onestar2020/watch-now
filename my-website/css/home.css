@@ -342,33 +342,41 @@ body {
   color: white;
 }
 /* === GENRE NAVIGATION === */
-.genre-list {
+.genre-nav {
   display: flex;
   flex-wrap: nowrap;
+  justify-content: flex-start;
   overflow-x: auto;
-  gap: 12px;
-  padding: 0 20px;
-  width: 100%;
+  white-space: nowrap;
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid #333;
+  padding: 12px 20px;
+  margin: 0;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
-.genre-list::-webkit-scrollbar {
+.genre-nav::-webkit-scrollbar {
   display: none;
 }
-.genre-btn {
+.genre-button {
   flex: 0 0 auto;
-  padding: 12px 20px;
-  background: rgba(255, 255, 255, 0.05);
-  border: none;
-  color: white;
+  padding: 14px 24px;
+  font-size: 16px;
   border-radius: 20px;
-  white-space: nowrap;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: none;
+  margin-right: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  text-align: center;
+  white-space: nowrap;
+  transition: all 0.3s ease;
+  min-width: max-content;
 }
-.genre-btn:hover {
+.genre-button:hover {
   background: rgba(255, 255, 255, 0.1);
 }
-
 
 /* === HORIZONTAL MOVIE LIST === */
 .genre-row {
