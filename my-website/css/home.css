@@ -341,48 +341,38 @@ body {
 .footer-links a:hover {
   color: white;
 }
-/* === FULL-WIDTH GENRE NAVIGATION === */
-.genre-row {
-  width: 100%;
-  margin: 0;
-  padding: 0;
+/* === GENRE NAVIGATION === */
+.genre-nav {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 0 20px;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #333;
+  gap: 10px;
 }
-
-.genre-list {
-  display: flex;
-  flex-wrap: wrap;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.genre-btn {
-  flex: 1 1 12.5%; /* 8 buttons in full width */
-  padding: 14px 0;
+.genre-button {
+  flex: 1 1 auto;
+  padding: 12px 24px;
   font-size: 16px;
-  color: #fff;
+  border-radius: 30px;
   background: rgba(255, 255, 255, 0.05);
-  border: none;
-  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   text-align: center;
+  min-width: 120px;
   white-space: nowrap;
-  transition: background 0.3s ease;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
 }
-
-.genre-btn:last-child {
-  border-right: none;
-}
-
-.genre-btn:hover {
+.genre-button:hover {
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* === HORIZONTAL GENRE MOVIE ROW === */
-.genre-row-movies {
+/* === HORIZONTAL MOVIE LIST === */
+.genre-row {
   display: flex;
   flex-direction: row;
   overflow-x: auto;
@@ -390,8 +380,7 @@ body {
   padding: 20px;
   scrollbar-width: none;
 }
-
-.genre-row-movies::-webkit-scrollbar {
+.genre-row::-webkit-scrollbar {
   display: none;
 }
 
@@ -446,116 +435,31 @@ body {
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
+  .genre-nav {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 15px 10px;
   }
-
-  .nav-left {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 20px;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .search-bar {
-    width: 100%;
-    margin-top: 10px;
-  }
-
-  .row {
-    padding: 20px;
-  }
-
-  .list img {
-    width: 120px;
-  }
-
-  .modal-body {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .modal-body img {
-    width: 80%;
-  }
-
-  .modal-text {
-    text-align: center;
-  }
-
-  .search-modal input {
-    width: 90%;
-  }
-
-  .footer {
-    flex-direction: column;
-    text-align: center;
-    gap: 10px;
-  }
-
-  .footer-links {
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .hero-banner {
-    height: 60vh;
-    padding: 30px 20px;
-  }
-
-  .banner-content h1 {
-    font-size: 2rem;
-  }
-
-  .banner-content p {
-    font-size: 1rem;
-  }
-
-  .btn-watch,
-  .btn-info {
-    font-size: 0.9rem;
-    padding: 8px 16px;
-  }
-
-  .genre-description {
+  .genre-nav::-webkit-scrollbar {
     display: none;
   }
-
-  .genre-btn {
-    flex: 1 1 50%; /* 2 per row on small screens */
-    padding: 12px 0;
+  .genre-button {
+    flex: 0 0 auto;
+    padding: 10px 16px;
     font-size: 14px;
+    min-width: 100px;
   }
-
-  .top-picks-wrapper {
-    flex-direction: column;
-    padding: 30px 20px;
-  }
-
-  .top-picks-label {
-    width: 100%;
-    height: auto;
-    justify-content: flex-start;
-    padding: 10px;
-    font-size: 1rem;
-  }
-
-  .genre-row-movies {
-    flex-direction: row;
-    overflow-x: auto;
+  .genre-row {
     padding: 10px 15px;
+    gap: 12px;
   }
-
   .genre-card {
     min-width: 140px;
   }
-
   .genre-card h3 {
     font-size: 13px;
+  }
+  .genre-description {
+    display: none;
   }
 }
