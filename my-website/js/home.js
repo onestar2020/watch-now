@@ -50,33 +50,6 @@ function displayGenreItems(items) {
     card.onclick = () => showDetails(item);
     row.appendChild(card);
   });
-
-  renderPaginationControls();
-}
-
-function renderPaginationControls() {
-  const container = document.getElementById('genre-results');
-  const pagination = document.createElement('div');
-  pagination.className = 'pagination-controls';
-
-  const backBtn = document.createElement('button');
-  backBtn.textContent = '⏮️ First';
-  backBtn.onclick = () => goToPage(1);
-
-  const prevBtn = document.createElement('button');
-  prevBtn.textContent = '← Prev';
-  prevBtn.disabled = currentPage <= 1;
-  prevBtn.onclick = () => goToPage(currentPage - 1);
-
-  const pageLabel = document.createElement('span');
-  pageLabel.textContent = `P${currentPage}`;
-
-  const nextBtn = document.createElement('button');
-  nextBtn.textContent = 'Next →';
-  nextBtn.onclick = () => goToPage(currentPage + 1);
-
-  pagination.append(backBtn, prevBtn, pageLabel, nextBtn);
-  container.appendChild(pagination);
 }
 
 function setupGenreButtons() {
@@ -93,13 +66,6 @@ function setupGenreButtons() {
       displayGenreItems(data.results);
     };
   });
-}
-
-async function goToPage(page) {
-  if (!currentGenreId) return;
-  currentPage = page;
-  const data = await fetchByGenre(currentGenreId, currentPage);
-  displayGenreItems(data.results);
 }
 
 function showDetails(item) {
