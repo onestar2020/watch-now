@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Website</title>
+  <title>WATCH-NOW</title>
   <link rel="stylesheet" href="css/home.css">
   <link rel="preload" href="css/home.css" as="style">
   <link rel="preload" href="js/home.js" as="script">
@@ -15,28 +15,28 @@
 <body>
   <!-- Navbar -->
   <header class="navbar">
-    <img src="logo.png" alt="LOGO HERE" />
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
+    <div class="nav-left">
+      <img src="logo.png" alt="WATCH-NOW" class="logo" />
+      <nav class="nav-menu">
+        <a href="#">WATCH-NOW</a>
+        <a href="index.html">Home</a>
+        <a href="#">Series</a>
+        <a href="#">Movies</a>
+        <a href="#">Most Recent</a>
+        <a href="#">My List</a>
+      </nav>
+    </div>
+    <div class="nav-right">
       <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
-    </nav>
+    </div>
   </header>
 
-  <!-- Hero Banner -->
-  <section class="hero" id="banner">
-    <div class="hero-overlay">
-      <div class="hero-content">
-        <h1 id="banner-title">Featured Title</h1>
-        <p id="banner-description">This is a description of the featured show or movie.</p>
-        <div class="hero-buttons">
-          <button class="btn-primary" onclick="watchNow()">▶ Watch Now</button>
-          <button class="btn-secondary">More Information</button>
-        </div>
-      </div>
-    </div>
+  <!-- Banner -->
+  <section class="banner" id="banner">
+    <h1 id="banner-title"></h1>
   </section>
 
-  <!-- Content Rows -->
+  <!-- Trending Sections -->
   <section class="row">
     <h2>Trending Movies</h2>
     <div class="list" id="movies-list"></div>
@@ -52,7 +52,7 @@
     <div class="list" id="anime-list"></div>
   </section>
 
-  <!-- Modal -->
+  <!-- Modal Preview -->
   <div class="modal" id="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>
@@ -86,7 +86,7 @@
   <!-- Footer -->
   <footer class="footer">
     <div class="footer-content">
-      <p>&copy; 2025 My Website. All rights reserved.</p>
+      <p>&copy; 2025 WATCH-NOW. All rights reserved.</p>
       <div class="footer-links">
         <a href="#">Disclaimer</a>
         <a href="#">About Us</a>
