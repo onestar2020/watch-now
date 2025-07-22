@@ -24,6 +24,15 @@ function displayGenreItems(items) {
   const container = document.getElementById('genre-results');
   container.innerHTML = '';
 
+  const label = document.createElement('div');
+  label.className = 'top-picks-label';
+  label.textContent = 'TOP PICKS';
+  container.appendChild(label);
+
+  const row = document.createElement('div');
+  row.className = 'genre-row';
+  container.appendChild(row);
+
   items.filter(item => item.poster_path).forEach(item => {
     const card = document.createElement('div');
     card.className = 'genre-card';
@@ -32,7 +41,7 @@ function displayGenreItems(items) {
       <h3>${item.title || item.name}</h3>
     `;
     card.onclick = () => showDetails(item);
-    container.appendChild(card);
+    row.appendChild(card);
   });
 }
 
