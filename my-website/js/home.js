@@ -2,6 +2,8 @@ const API_KEY = '69417ec87bd388d1e39d8d8307479574';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/original';
 let currentItem;
+let currentPage = 1;
+let currentGenreId = null;
 
 const genreMap = {
   'Action': 28,
@@ -14,10 +16,10 @@ const genreMap = {
   'Thriller': 53
 };
 
-async function fetchByGenre(genreId) {
-  const response = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=popularity.desc&language=en-US&page=1`);
+async function fetchByGenre(genreId, page = 1) {
+  const response = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=popularity.desc&language=en-US&page=${page}`);
   const data = await response.json();
-  return data.results || [];
+  return data;
 }
 
 function displayGenreItems(items) {
@@ -48,6 +50,33 @@ function displayGenreItems(items) {
     card.onclick = () => showDetails(item);
     row.appendChild(card);
   });
+
+  renderPaginationControls();
+}
+
+function renderPaginationControls() {
+  const container = document.getElementById('genre-results');
+  const pagination = document.createElement('div');
+  pagination.className = 'pagination-controls';
+
+  const backBtn = document.createElement('button');
+  backBtn.textContent = '⏮️ First';
+  backBtn.onclick = () => goToPage(1);
+
+  const prevBtn = document.createElement('button');
+  prevBtn.textContent = '← Prev';
+  prevBtn.disabled = currentPage <= 1;
+  prevBtn.onclick = () => goToPage(currentPage - 1);
+
+  const pageLabel = document.createElement('span');
+  pageLabel.textContent = `P${currentPage}`;
+
+  const nextBtn = document.createElement('button');
+  nextBtn.textContent = 'Next →';
+  nextBtn.onclick = () => goToPage(currentPage + 1);
+
+  pagination.append(backBtn, prevBtn, pageLabel, nextBtn);
+  container.appendChild(pagination);
 }
 
 function setupGenreButtons() {
@@ -57,11 +86,20 @@ function setupGenreButtons() {
       const genreId = genreMap[genre];
       if (!genreId) return;
 
+      currentGenreId = genreId;
+      currentPage = 1;
       document.getElementById('genre-title').textContent = `${genre} Movies`;
-      const results = await fetchByGenre(genreId);
-      displayGenreItems(results);
+      const data = await fetchByGenre(genreId, currentPage);
+      displayGenreItems(data.results);
     };
   });
+}
+
+async function goToPage(page) {
+  if (!currentGenreId) return;
+  currentPage = page;
+  const data = await fetchByGenre(currentGenreId, currentPage);
+  displayGenreItems(data.results);
 }
 
 function showDetails(item) {
@@ -133,9 +171,10 @@ async function searchTMDB() {
 async function init() {
   setupGenreButtons();
   const defaultGenre = 'Action';
+  currentGenreId = genreMap[defaultGenre];
   document.getElementById('genre-title').textContent = `${defaultGenre} Movies`;
-  const results = await fetchByGenre(genreMap[defaultGenre]);
-  displayGenreItems(results);
+  const data = await fetchByGenre(currentGenreId);
+  displayGenreItems(data.results);
 }
 
 init();
