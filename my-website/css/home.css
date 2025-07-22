@@ -376,10 +376,12 @@ body {
   flex-direction: row;
   overflow-x: auto;
   gap: 16px;
-  padding: 20px 0; /* Changed to remove side padding */
-  scrollbar-width: none;
-  width: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100vw;
+  box-sizing: border-box;
 }
+
 
 .genre-row::-webkit-scrollbar {
   display: none;
