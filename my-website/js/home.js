@@ -15,14 +15,30 @@ const genreMap = {
 };
 
 async function fetchByGenre(genreId) {
-  const response = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=popularity.desc&language=en-US&page=1`);
-  const data = await response.json();
-  return data.results || [];
+  try {
+    const response = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=${genreId}&sort_by=popularity.desc&language=en-US&page=1`);
+    const data = await response.json();
+    return data.results || [];
+  } catch (err) {
+    console.error("Failed to fetch genre:", err);
+    return [];
+  }
 }
 
 function displayGenreItems(items) {
   const container = document.getElementById('genre-results');
   container.innerHTML = '';
+
+  // Wrapper with label
+  const wrapper = document.createElement('div');
+  wrapper.className = 'top-picks-wrapper';
+
+  const label = document.createElement('div');
+  label.className = 'top-picks-label';
+  label.textContent = 'TOP PICKS';
+
+  const list = document.createElement('div');
+  list.className = 'genre-list';
 
   items.filter(item => item.poster_path).forEach(item => {
     const card = document.createElement('div');
@@ -32,8 +48,12 @@ function displayGenreItems(items) {
       <h3>${item.title || item.name}</h3>
     `;
     card.onclick = () => showDetails(item);
-    container.appendChild(card);
+    list.appendChild(card);
   });
+
+  wrapper.appendChild(label);
+  wrapper.appendChild(list);
+  container.appendChild(wrapper);
 }
 
 function setupGenreButtons() {
@@ -98,22 +118,26 @@ async function searchTMDB() {
     return;
   }
 
-  const res = await fetch(`${BASE_URL}/search/multi?api_key=${API_KEY}&query=${encodeURIComponent(query)}`);
-  const data = await res.json();
+  try {
+    const res = await fetch(`${BASE_URL}/search/multi?api_key=${API_KEY}&query=${encodeURIComponent(query)}`);
+    const data = await res.json();
 
-  const container = document.getElementById('search-results');
-  container.innerHTML = '';
-  data.results.forEach(item => {
-    if (!item.poster_path) return;
-    const img = document.createElement('img');
-    img.src = `${IMG_URL}${item.poster_path}`;
-    img.alt = item.title || item.name;
-    img.onclick = () => {
-      closeSearchModal();
-      showDetails(item);
-    };
-    container.appendChild(img);
-  });
+    const container = document.getElementById('search-results');
+    container.innerHTML = '';
+    data.results.forEach(item => {
+      if (!item.poster_path) return;
+      const img = document.createElement('img');
+      img.src = `${IMG_URL}${item.poster_path}`;
+      img.alt = item.title || item.name;
+      img.onclick = () => {
+        closeSearchModal();
+        showDetails(item);
+      };
+      container.appendChild(img);
+    });
+  } catch (err) {
+    console.error("Search failed:", err);
+  }
 }
 
 async function init() {
