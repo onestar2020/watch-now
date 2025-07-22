@@ -71,15 +71,28 @@
       width: 100%;
       border-radius: 5px;
     }
-    .view-more-btn {
-      min-width: 120px;
-      padding: 10px;
+    .pagination {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding-bottom: 30px;
+    }
+    .pagination button {
+      padding: 10px 16px;
       font-size: 14px;
+      border: none;
+      border-radius: 4px;
       background-color: #e50914;
       color: #fff;
-      border: none;
-      border-radius: 5px;
       cursor: pointer;
+    }
+    .pagination .page-label {
+      padding: 10px 16px;
+      font-size: 14px;
+      background-color: #333;
+      color: #fff;
+      border-radius: 4px;
+      cursor: default;
     }
   </style>
 </head>
@@ -133,9 +146,7 @@
   <section class="genre-display">
     <h2 id="genre-title">Select a Genre</h2>
     <div class="genre-results" id="genre-results"></div>
-    <div style="padding: 20px; text-align: center;">
-      <button class="view-more-btn" id="view-more" onclick="loadMoreGenre()">View More</button>
-    </div>
+    <div class="pagination" id="pagination"></div>
   </section>
 
   <!-- Modal Preview -->
