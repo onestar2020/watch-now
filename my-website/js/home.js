@@ -26,9 +26,9 @@ function displayGenreItems(items) {
   const container = document.getElementById('genre-results');
   container.innerHTML = '';
 
-  const row = document.createElement('div');
-  row.className = 'genre-row';
-  container.appendChild(row);
+  const scrollWrapper = document.createElement('div');
+  scrollWrapper.className = 'horizontal-scroll';
+  container.appendChild(scrollWrapper);
 
   const seen = new Set();
   items.filter(item => item.poster_path).forEach(item => {
@@ -43,7 +43,7 @@ function displayGenreItems(items) {
       <h3>${item.title || item.name}</h3>
     `;
     card.onclick = () => showDetails(item);
-    row.appendChild(card);
+    scrollWrapper.appendChild(card);
   });
 }
 
