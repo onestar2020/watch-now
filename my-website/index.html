@@ -10,6 +10,34 @@
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <script defer src="js/home.js"></script>
+  <style>
+    .genre-row {
+      margin: 20px 0;
+      padding: 10px 20px;
+      background: #111;
+    }
+    .genre-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+    }
+    .genre-btn {
+      flex: 1 1 calc(12.5% - 10px);
+      min-width: 100px;
+      padding: 10px;
+      font-size: 16px;
+      background-color: #222;
+      color: #fff;
+      border: 1px solid #333;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .genre-btn:hover {
+      background-color: #e50914;
+    }
+  </style>
 </head>
 
 <body>

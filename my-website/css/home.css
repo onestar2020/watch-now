@@ -452,6 +452,41 @@ body {
   color: #fff;
 }
 
+/* === GENRE NAVIGATION === */
+.genre-nav {
+  display: flex;
+  overflow-x: auto;
+  gap: 12px;
+  padding: 20px 60px;
+  background-color: #111;
+  border-bottom: 1px solid #333;
+  scrollbar-width: none; /* Firefox */
+}
+
+.genre-nav::-webkit-scrollbar {
+  display: none; /* Chrome/Safari */
+}
+
+.genre-button {
+  flex: 0 0 auto;
+  padding: 12px 24px;
+  font-size: 16px;
+  border-radius: 30px;
+  background-color: #1c1c1c;
+  color: white;
+  border: 1px solid #333;
+  cursor: pointer;
+  text-align: center;
+  min-width: 120px;
+  white-space: nowrap;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.genre-button:hover {
+  background-color: #333;
+  color: #fff;
+}
+
 /* === TOP PICKS SECTION === */
 .top-picks {
   padding: 40px 60px;
@@ -460,6 +495,7 @@ body {
 .top-picks h2 {
   font-size: 1.8rem;
   margin-bottom: 20px;
+  color: #fff;
 }
 
 .top-pick-list {
@@ -467,6 +503,14 @@ body {
   gap: 25px;
   overflow-x: auto;
   scroll-behavior: smooth;
+}
+
+.top-pick-list::-webkit-scrollbar {
+  height: 6px;
+}
+.top-pick-list::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 3px;
 }
 
 .top-pick-item {
@@ -488,18 +532,40 @@ body {
 
 .top-pick-description {
   position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: rgba(0,0,0,0.8);
+  top: 0;
+  left: 210px;
+  width: 300px;
+  background: rgba(0,0,0,0.9);
   color: #fff;
-  padding: 10px;
+  padding: 15px;
   font-size: 0.85rem;
   opacity: 0;
   transition: opacity 0.3s ease;
-  border-radius: 0 0 10px 10px;
+  border-radius: 10px;
+  z-index: 5;
 }
 
 .top-pick-item:hover .top-pick-description {
   opacity: 1;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .top-pick-description {
+    display: none;
+  }
+
+  .genre-nav {
+    padding: 15px 20px;
+  }
+
+  .genre-button {
+    padding: 10px 16px;
+    font-size: 14px;
+    min-width: 90px;
+  }
+
+  .top-picks {
+    padding: 30px 20px;
+  }
 }
