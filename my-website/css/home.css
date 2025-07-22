@@ -344,28 +344,32 @@ body {
 /* === GENRE NAVIGATION === */
 .genre-nav {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  padding: 0 20px;
+  overflow-x: auto;
+  white-space: nowrap;
   background-color: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #333;
-  gap: 10px;
+  padding: 0;
+  margin: 0;
+  scrollbar-width: none;
+}
+.genre-nav::-webkit-scrollbar {
+  display: none;
 }
 .genre-button {
-  flex: 1 1 auto;
-  padding: 12px 24px;
+  flex: 0 0 auto;
+  padding: 14px 24px;
   font-size: 16px;
-  border-radius: 30px;
+  border-radius: 0;
   background: rgba(255, 255, 255, 0.05);
   color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: none;
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   text-align: center;
-  min-width: 120px;
   white-space: nowrap;
   transition: all 0.3s ease;
-  backdrop-filter: blur(6px);
+  min-width: max-content;
 }
 .genre-button:hover {
   background: rgba(255, 255, 255, 0.1);
@@ -435,19 +439,9 @@ body {
 
 /* === RESPONSIVE DESIGN === */
 @media (max-width: 768px) {
-  .genre-nav {
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    padding: 15px 10px;
-  }
-  .genre-nav::-webkit-scrollbar {
-    display: none;
-  }
   .genre-button {
-    flex: 0 0 auto;
-    padding: 10px 16px;
     font-size: 14px;
-    min-width: 100px;
+    padding: 10px 16px;
   }
   .genre-row {
     padding: 10px 15px;
