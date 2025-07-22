@@ -24,11 +24,6 @@ function displayGenreItems(items) {
   const container = document.getElementById('genre-results');
   container.innerHTML = '';
 
-  const label = document.createElement('div');
-  label.className = 'top-picks-label';
-  label.textContent = 'TOP PICKS';
-  container.appendChild(label);
-
   const row = document.createElement('div');
   row.className = 'genre-row';
   container.appendChild(row);
