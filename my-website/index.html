@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -12,45 +13,57 @@
 </head>
 
 <body>
-  <div class="navbar">
+  <!-- Navbar -->
+  <header class="navbar">
     <img src="logo.png" alt="LOGO HERE" />
-    <div class="nav-links">
+    <nav class="nav-links">
       <a href="index.html">Home</a>
       <input type="text" class="search-bar" placeholder="Search..." onfocus="openSearchModal()" />
+    </nav>
+  </header>
+
+  <!-- Hero Banner -->
+  <section class="hero" id="banner">
+    <div class="hero-overlay">
+      <div class="hero-content">
+        <h1 id="banner-title">Featured Title</h1>
+        <p id="banner-description">This is a description of the featured show or movie.</p>
+        <div class="hero-buttons">
+          <button class="btn-primary" onclick="watchNow()">▶ Watch Now</button>
+          <button class="btn-secondary">More Information</button>
+        </div>
+      </div>
     </div>
-  </div>
+  </section>
 
-  <div class="banner" id="banner">
-    <h1 id="banner-title"></h1>
-  </div>
-
-  <div class="row">
+  <!-- Content Rows -->
+  <section class="row">
     <h2>Trending Movies</h2>
     <div class="list" id="movies-list"></div>
-  </div>
+  </section>
 
-  <div class="row">
+  <section class="row">
     <h2>Trending TV Shows</h2>
     <div class="list" id="tvshows-list"></div>
-  </div>
+  </section>
 
-  <div class="row">
+  <section class="row">
     <h2>Trending Anime</h2>
     <div class="list" id="anime-list"></div>
-  </div>
+  </section>
 
+  <!-- Modal -->
   <div class="modal" id="modal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal()" style="color: red;">&times;</span>
+      <span class="close" onclick="closeModal()">&times;</span>
       <div class="modal-body">
-  <img id="modal-image" src="" alt="" />
-  <div class="modal-text">
-    <h2 id="modal-title"></h2>
-    <div class="stars" id="modal-rating"></div>
-    <p id="modal-description"></p>
-  </div>
-</div>
-      
+        <img id="modal-image" src="" alt="" />
+        <div class="modal-text">
+          <h2 id="modal-title"></h2>
+          <div class="stars" id="modal-rating"></div>
+          <p id="modal-description"></p>
+        </div>
+      </div>
       <div class="server-selector">
         <label for="server">Change Server:</label>
         <select id="server" onchange="changeServer()">
@@ -63,22 +76,23 @@
     </div>
   </div>
 
+  <!-- Search Modal -->
   <div class="search-modal" id="search-modal">
-    <span class="close" onclick="closeSearchModal()" style="color: red;">&times;</span>
+    <span class="close" onclick="closeSearchModal()">&times;</span>
     <input type="text" id="search-input" placeholder="Search for a movie or show..." oninput="searchTMDB()" />
     <div class="results" id="search-results"></div>
   </div>
 
-<footer class="footer">
-  <div class="footer-content">
-    <p>&copy; 2025 My Website. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#">Disclaimer</a>
-      <a href="#">About Us</a>
-      <a href="#">Contact Us</a>
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-content">
+      <p>&copy; 2025 My Website. All rights reserved.</p>
+      <div class="footer-links">
+        <a href="#">Disclaimer</a>
+        <a href="#">About Us</a>
+        <a href="#">Contact Us</a>
+      </div>
     </div>
-  </div>
-</footer>
-
-  
+  </footer>
 </body>
+</html>
