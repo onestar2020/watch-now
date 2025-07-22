@@ -456,15 +456,16 @@ body {
 .genre-nav {
   display: flex;
   overflow-x: auto;
-  gap: 12px;
+  gap: 16px;
   padding: 20px 60px;
-  background-color: #111;
+  background-color: rgba(0, 0, 0, 0.4); /* translucent */
+  backdrop-filter: blur(8px); /* blur background */
   border-bottom: 1px solid #333;
-  scrollbar-width: none; /* Firefox */
+  scrollbar-width: none;
 }
 
 .genre-nav::-webkit-scrollbar {
-  display: none; /* Chrome/Safari */
+  display: none;
 }
 
 .genre-button {
@@ -472,18 +473,19 @@ body {
   padding: 12px 24px;
   font-size: 16px;
   border-radius: 30px;
-  background-color: #1c1c1c;
-  color: white;
-  border: 1px solid #333;
+  background: rgba(255, 255, 255, 0.05); /* glassy look */
+  color: #fff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   cursor: pointer;
   text-align: center;
   min-width: 120px;
   white-space: nowrap;
-  transition: background-color 0.3s, color 0.3s;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(6px);
 }
 
 .genre-button:hover {
-  background-color: #333;
+  background: rgba(255, 255, 255, 0.1);
   color: #fff;
 }
 
@@ -508,6 +510,7 @@ body {
 .top-pick-list::-webkit-scrollbar {
   height: 6px;
 }
+
 .top-pick-list::-webkit-scrollbar-thumb {
   background-color: #444;
   border-radius: 3px;
@@ -534,19 +537,22 @@ body {
   position: absolute;
   top: 0;
   left: 210px;
-  width: 300px;
-  background: rgba(0,0,0,0.9);
+  width: 320px;
+  background: rgba(18, 18, 18, 0.7); /* semi-transparent black */
+  backdrop-filter: blur(10px); /* blurred background */
   color: #fff;
   padding: 15px;
   font-size: 0.85rem;
   opacity: 0;
   transition: opacity 0.3s ease;
-  border-radius: 10px;
+  border-radius: 12px;
   z-index: 5;
+  pointer-events: none;
 }
 
 .top-pick-item:hover .top-pick-description {
   opacity: 1;
+  pointer-events: auto;
 }
 
 /* === RESPONSIVE === */
