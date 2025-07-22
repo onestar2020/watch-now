@@ -555,3 +555,41 @@ body {
     font-size: 13px;
   }
 }
+
+/* === PAGINATION CONTROLS === */
+.pagination-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin: 20px 0 40px;
+  flex-wrap: wrap;
+}
+
+.pagination-controls button {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: white;
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s ease;
+  min-width: 90px;
+}
+
+.pagination-controls button:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.pagination-controls button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.pagination-controls .page-indicator {
+  font-size: 14px;
+  color: #aaa;
+  padding: 8px 12px;
+}
+
