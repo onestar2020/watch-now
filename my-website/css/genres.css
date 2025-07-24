@@ -1,28 +1,28 @@
-/* === FIXED NETFLIX-STYLE GENRE BUTTONS - LEFT ALIGNED, SCROLLABLE === */
+/* === Genre Buttons Container === */
 .genre-buttons {
   width: 100%;
   padding: 20px 0;
   background-color: #111;
-  overflow-x: hidden;
+  overflow-x: auto;
 }
 
+/* === Genre Button List - Horizontal Scroll === */
 .genre-list {
-  display: flex !important;
-  justify-content: flex-start !important;
+  display: flex;
+  justify-content: flex-start;
   align-items: center;
   gap: 12px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 0 0 0 20px;
+  padding: 0 20px;
   margin: 0;
+  overflow-x: auto;
   width: 100%;
-  scrollbar-width: none;
+  scrollbar-width: none; /* Firefox */
 }
-
 .genre-list::-webkit-scrollbar {
-  display: none;
+  display: none; /* Chrome/Safari */
 }
 
+/* === Netflix-Style Genre Buttons === */
 .genre-btn {
   flex: 0 0 auto;
   background-color: #333;
@@ -35,11 +35,13 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
+/* Hover effect */
 .genre-btn:hover {
   background-color: #e50914;
   transform: scale(1.05);
 }
 
+/* Click effect */
 .genre-btn:active {
   background-color: #b00610;
   transform: scale(0.98);
