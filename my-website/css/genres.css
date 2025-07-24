@@ -1,15 +1,17 @@
 .genre-buttons {
-  width: 100%;
+  width: 100vw;
+  max-width: 100%;
   overflow-x: auto;
-  background: #111; /* optional: dark background for contrast */
   padding: 10px 0;
+  background: #111; /* optional: to separate section visually */
 }
 
 .genre-list {
   display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 12px;
   padding: 10px 20px;
-  overflow-x: auto;
   width: 100%;
   scrollbar-width: none;
 }
@@ -20,17 +22,17 @@
 
 .genre-btn {
   flex: 0 0 auto;
-  padding: 10px 18px;
+  padding: 12px 24px;
+  background-color: #e50914;
   border: none;
-  background-color: #222;
-  color: #fff;
-  font-size: 15px;
-  border-radius: 30px;
+  border-radius: 20px;
+  color: white;
+  font-size: 16px;
   cursor: pointer;
-  transition: background 0.3s ease;
   white-space: nowrap;
+  transition: background 0.3s ease;
 }
 
 .genre-btn:hover {
-  background-color: #e50914;
+  background-color: #b00610;
 }
