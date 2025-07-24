@@ -5,50 +5,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>WATCH-NOW</title>
 
-  <!-- Styles -->
-  <link rel="preload" href="css/home.css" as="style">
-  <link rel="stylesheet" href="css/home.css">
+  <!-- Reset Styles -->
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      overflow-x: hidden;
+      font-family: Arial, sans-serif;
+    }
+  </style>
 
   <!-- Netflix-style Genre Button Styles -->
- <style>
-  .genre-buttons {
-    width: 100%;
-    overflow-x: auto;
-    padding: 0;
-    margin: 0;
-  }
+  <style>
+    .genre-buttons {
+      width: 100%;
+      background-color: #111;
+      overflow-x: auto;
+      padding: 12px 0;
+    }
 
-  .genre-list {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow-x: auto;
-    gap: 12px;
-    padding: 10px 20px;
-    scrollbar-width: none; /* Firefox */
-  }
+    .genre-list {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 12px;
+      padding: 10px 20px;
+      overflow-x: auto;
+      margin: 0;
+      scrollbar-width: none; /* Firefox */
+    }
 
-  .genre-list::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
-  }
+    .genre-list::-webkit-scrollbar {
+      display: none; /* Chrome, Safari */
+    }
 
-  .genre-btn {
-    flex: 0 0 auto;
-    padding: 10px 20px;
-    background-color: #e50914;
-    color: #fff;
-    border: none;
-    border-radius: 6px;
-    font-size: 14px;
-    cursor: pointer;
-    white-space: nowrap;
-    transition: background-color 0.3s;
-  }
+    .genre-btn {
+      flex: 0 0 auto;
+      background-color: #e50914;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: background-color 0.3s, transform 0.2s;
+    }
 
-  .genre-btn:hover {
-    background-color: #b00610;
-  }
-</style>
+    .genre-btn:hover {
+      background-color: #b00610;
+      transform: scale(1.05);
+    }
 
+    .genre-btn:active {
+      transform: scale(0.95);
+    }
+  </style>
+
+  <!-- Stylesheets -->
+  <link rel="preload" href="css/home.css" as="style">
+  <link rel="stylesheet" href="css/home.css">
 
   <!-- Manifest & Fonts -->
   <link rel="manifest" href="manifest.json">
@@ -102,17 +118,6 @@
       <button class="genre-btn" onclick="loadGenre('53', 'Thriller')">Thriller</button>
     </div>
   </section>
-
-  <!-- Hidden Genre Results -->
-  <!--
-  <section class="genre-display">
-    <h2 id="genre-title">Select a Genre</h2>
-    <div class="genre-results">
-      <div class="genre-row" id="genre-results"></div>
-    </div>
-    <div class="pagination" id="pagination"></div>
-  </section>
-  -->
 
   <!-- Modal -->
   <div class="modal" id="modal">
