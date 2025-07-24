@@ -386,6 +386,7 @@ body {
   gap: 16px;
   padding: 20px;
   scrollbar-width: none;
+  width: max-content;
 }
 .genre-row::-webkit-scrollbar {
   display: none;
