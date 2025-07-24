@@ -1,0 +1,35 @@
+.genre-buttons {
+  width: 100%;
+  overflow-x: auto;
+  background: #111;
+  padding: 15px 0;
+}
+
+.genre-list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 10px;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+
+.genre-btn {
+  flex-grow: 1;
+  flex-basis: 12%;
+  padding: 14px 10px;
+  background: #e50914;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.genre-btn:hover {
+  background: #b00610;
+}
