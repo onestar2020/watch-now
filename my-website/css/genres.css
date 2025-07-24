@@ -1,35 +1,40 @@
-/* === GENRE BUTTONS CONTAINER – Wrap Buttons Instead of Scrolling === */
-.genre-buttons .genre-list {
-  display: flex;
-  flex-wrap: wrap; /* allow wrapping to fit screen */
-  gap: 12px;
-  padding: 10px 20px;
-  justify-content: center;
-}
-
-/* === GENRE BUTTON STYLE === */
-.genre-buttons .genre-btn {
-  padding: 12px 20px;
-  background: linear-gradient(to right, #e50914, #b81d24);
-  border: none;
-  border-radius: 30px;
-  color: #fff;
-  font-weight: 600;
-  font-size: 0.95rem;
-  cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease;
+.genre-row {
+  width: 100%;
+  overflow-x: auto;
   white-space: nowrap;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
-.genre-buttons .genre-btn:hover {
-  background: linear-gradient(to right, #b81d24, #e50914);
-  transform: scale(1.05);
+.genre-list {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: nowrap;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  scrollbar-width: none;
 }
 
-/* === RESPONSIVE: SHRINK ON SMALL SCREENS === */
-@media (max-width: 600px) {
-  .genre-buttons .genre-btn {
-    padding: 10px 14px;
-    font-size: 0.85rem;
-  }
+.genre-list::-webkit-scrollbar {
+  display: none;
+}
+
+.genre-btn {
+  flex: 0 0 auto;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background-color: #b80000;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+  border: none;
+  transition: background 0.3s;
+}
+
+.genre-btn:hover {
+  background-color: #ff1f1f;
 }
