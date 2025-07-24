@@ -13,12 +13,13 @@
   <link rel="manifest" href="manifest.json">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-  <!-- Genre Script -->
+  <!-- Script -->
   <script src="js/home.js" defer></script>
 
-  <!-- Inline Genre Styles -->
+  <!-- Inline Styles -->
   <style>
-    .genre-row {
+    /* Genre Button Section */
+    .genre-buttons {
       margin: 20px 0;
       padding: 10px 20px;
       background: #111;
@@ -26,14 +27,10 @@
     .genre-list {
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-between;
       gap: 10px;
     }
     .genre-btn {
-      flex: 1 1 calc(12.5% - 10px);
-      min-width: 100px;
-      padding: 10px;
-      font-size: 16px;
+      padding: 10px 20px;
       background-color: #222;
       color: #fff;
       border: 1px solid #333;
@@ -44,18 +41,23 @@
     .genre-btn:hover {
       background-color: #e50914;
     }
+
+    /* Genre Movies */
+    .genre-display {
+      margin-top: 30px;
+    }
     .genre-results {
-      display: flex;
       overflow-x: auto;
+    }
+    .genre-row {
+      display: flex;
       gap: 15px;
       padding: 20px;
+      overflow-x: auto;
+      scrollbar-width: none;
     }
-    .genre-results::-webkit-scrollbar {
-      height: 8px;
-    }
-    .genre-results::-webkit-scrollbar-thumb {
-      background-color: #e50914;
-      border-radius: 10px;
+    .genre-row::-webkit-scrollbar {
+      display: none;
     }
     .genre-card {
       background-color: #222;
@@ -63,7 +65,6 @@
       padding: 10px;
       color: white;
       min-width: 200px;
-      max-width: 200px;
       flex-shrink: 0;
       cursor: pointer;
     }
@@ -71,6 +72,8 @@
       width: 100%;
       border-radius: 5px;
     }
+
+    /* Pagination */
     .pagination {
       display: flex;
       justify-content: center;
@@ -96,7 +99,6 @@
     }
   </style>
 </head>
-
 <body>
   <!-- Navbar -->
   <header class="navbar">
@@ -128,8 +130,8 @@
     <img id="banner-image" src="https://image.tmdb.org/t/p/original/q5pXRYTycaeW6dEgsCrd4mYPmxM.jpg" alt="Banner Background" />
   </section>
 
-  <!-- Genre Selector -->
-  <section class="genre-row">
+  <!-- Genre Buttons -->
+  <section class="genre-buttons">
     <div class="genre-list">
       <button class="genre-btn" onclick="loadGenre('28', 'Action')">Action</button>
       <button class="genre-btn" onclick="loadGenre('12', 'Adventure')">Adventure</button>
@@ -142,14 +144,16 @@
     </div>
   </section>
 
-  <!-- Genre Title + Results Container -->
+  <!-- Genre Results Display -->
   <section class="genre-display">
     <h2 id="genre-title">Select a Genre</h2>
-    <div class="genre-results" id="genre-results"></div>
+    <div class="genre-results">
+      <div class="genre-row" id="genre-results"></div>
+    </div>
     <div class="pagination" id="pagination"></div>
   </section>
 
-  <!-- Modal Preview -->
+  <!-- Modal -->
   <div class="modal" id="modal">
     <div class="modal-content">
       <span class="close" onclick="closeModal()">&times;</span>

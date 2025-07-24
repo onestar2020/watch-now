@@ -341,6 +341,7 @@ body {
 .footer-links a:hover {
   color: white;
 }
+
 /* === GENRE NAVIGATION === */
 .genre-nav {
   display: flex;
@@ -385,7 +386,6 @@ body {
   gap: 16px;
   padding: 20px;
 }
-
 
 /* === INDIVIDUAL MOVIE CARD === */
 .genre-card {
