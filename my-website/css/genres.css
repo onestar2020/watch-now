@@ -1,21 +1,27 @@
-/* === NETFLIX STYLE GENRE BUTTONS === */
+/* === NETFLIX STYLE GENRE BUTTONS (HORIZONTAL SCROLL) === */
 .genre-buttons {
   width: 100%;
-  display: flex;
-  justify-content: center;
   padding: 20px 0;
   background-color: #111;
+  overflow-x: auto;
 }
 
 .genre-list {
   display: flex;
   gap: 12px;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: nowrap;
+  overflow-x: auto;
   padding: 0 20px;
+  width: 100%;
+  scrollbar-width: none; /* Firefox */
+}
+
+.genre-list::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
 }
 
 .genre-btn {
+  flex: 0 0 auto;
   background-color: #333;
   color: #fff;
   border: none;
