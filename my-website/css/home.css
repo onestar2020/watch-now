@@ -380,18 +380,10 @@ body {
 
 /* === HORIZONTAL MOVIE LIST === */
 .genre-row {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
   gap: 16px;
   padding: 20px;
-  scrollbar-width: none;
-  width: max-content; /* ← Correct placement */
-}
-
-.genre-results {
-  overflow-x: auto;
-  width: 100%;
 }
 
 
