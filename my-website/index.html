@@ -8,7 +8,47 @@
   <!-- Styles -->
   <link rel="preload" href="css/home.css" as="style">
   <link rel="stylesheet" href="css/home.css">
-  <link rel="stylesheet" href="css/genres.css">
+
+  <!-- Netflix-style Genre Button Styles -->
+  <style>
+    .genre-buttons {
+      margin: 20px 0;
+      padding: 0 20px;
+    }
+
+    .genre-list {
+      display: flex;
+      gap: 12px;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .genre-list::-webkit-scrollbar {
+      display: none;
+    }
+
+    .genre-btn {
+      flex: 0 0 auto;
+      padding: 12px 24px;
+      background-color: #141414;
+      color: white;
+      border: 1px solid #444;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 14px;
+      transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s;
+      cursor: pointer;
+    }
+
+    .genre-btn:hover,
+    .genre-btn:focus,
+    .genre-btn:active {
+      background-color: #e50914;
+      color: #fff;
+      transform: scale(1.05);
+    }
+  </style>
 
   <!-- Manifest & Fonts -->
   <link rel="manifest" href="manifest.json">
@@ -49,7 +89,7 @@
     <img id="banner-image" src="https://image.tmdb.org/t/p/original/q5pXRYTycaeW6dEgsCrd4mYPmxM.jpg" alt="Banner Background" />
   </section>
 
-  <!-- Genre Buttons Only (Full Width) -->
+  <!-- Genre Buttons -->
   <section class="genre-buttons">
     <div class="genre-list">
       <button class="genre-btn" onclick="loadGenre('28', 'Action')">Action</button>
@@ -63,7 +103,7 @@
     </div>
   </section>
 
-  <!-- Temporarily Hidden Genre Results Section -->
+  <!-- Hidden Genre Results -->
   <!--
   <section class="genre-display">
     <h2 id="genre-title">Select a Genre</h2>
