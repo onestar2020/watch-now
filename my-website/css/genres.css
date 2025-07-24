@@ -7,15 +7,20 @@
 }
 
 .genre-list {
-  display: flex;
+  display: flex !important;
   gap: 12px;
-  flex-wrap: nowrap;
-  overflow-x: auto;
-  padding: 0 0 0 20px; /* left padding only */
-  margin: 0;
-  width: 100%;
-  scrollbar-width: none; /* Firefox */
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  padding: 0 0 0 20px !important;
+  margin: 0 !important;
+  width: 100% !important;
+  justify-content: flex-start !important;
+  scrollbar-width: none;
 }
+.genre-list::-webkit-scrollbar {
+  display: none;
+}
+
 
 .genre-list::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
