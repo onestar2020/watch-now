@@ -1,19 +1,15 @@
-.genre-row {
+.genre-buttons {
   width: 100%;
   overflow-x: auto;
-  white-space: nowrap;
-  padding: 20px;
-  box-sizing: border-box;
+  background: #111; /* optional: dark background for contrast */
+  padding: 10px 0;
 }
 
 .genre-list {
   display: flex;
-  justify-content: flex-start;
-  flex-wrap: nowrap;
   gap: 12px;
+  padding: 10px 20px;
   overflow-x: auto;
-  padding: 0;
-  margin: 0;
   width: 100%;
   scrollbar-width: none;
 }
@@ -24,17 +20,17 @@
 
 .genre-btn {
   flex: 0 0 auto;
-  padding: 10px 20px;
-  border-radius: 999px;
-  background-color: #b80000;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  white-space: nowrap;
+  padding: 10px 18px;
   border: none;
-  transition: background 0.3s;
+  background-color: #222;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  white-space: nowrap;
 }
 
 .genre-btn:hover {
-  background-color: #ff1f1f;
+  background-color: #e50914;
 }
