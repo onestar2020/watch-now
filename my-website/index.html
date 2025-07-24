@@ -6,9 +6,9 @@
   <title>WATCH-NOW</title>
 
   <!-- Styles -->
-<link rel="preload" href="css/home.css" as="style"> <!-- ✅ preload first -->
-<link rel="stylesheet" href="css/home.css">          <!-- base styles -->
-<link rel="stylesheet" href="css/genres.css">        <!-- override styles -->
+  <link rel="preload" href="css/home.css" as="style">
+  <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/genres.css">
 
   <!-- Manifest & Fonts -->
   <link rel="manifest" href="manifest.json">
@@ -49,23 +49,22 @@
     <img id="banner-image" src="https://image.tmdb.org/t/p/original/q5pXRYTycaeW6dEgsCrd4mYPmxM.jpg" alt="Banner Background" />
   </section>
 
-  <!-- Genre Buttons -->
-<section class="genre-buttons">
-  <div class="genre-list">
-    <button class="genre-btn" onclick="loadGenre('28', 'Action')">Action</button>
-    <button class="genre-btn" onclick="loadGenre('12', 'Adventure')">Adventure</button>
-    <button class="genre-btn" onclick="loadGenre('35', 'Comedy')">Comedy</button>
-    <button class="genre-btn" onclick="loadGenre('80', 'Crime')">Crime</button>
-    <button class="genre-btn" onclick="loadGenre('18', 'Drama')">Drama</button>
-    <button class="genre-btn" onclick="loadGenre('14', 'Fantasy')">Fantasy</button>
-    <button class="genre-btn" onclick="loadGenre('878', 'Sci-Fi')">Sci-Fi</button>
-    <button class="genre-btn" onclick="loadGenre('53', 'Thriller')">Thriller</button>
-  </div>
-</section>
+  <!-- Genre Buttons Only (Full Width) -->
+  <section class="genre-buttons">
+    <div class="genre-list">
+      <button class="genre-btn" onclick="loadGenre('28', 'Action')">Action</button>
+      <button class="genre-btn" onclick="loadGenre('12', 'Adventure')">Adventure</button>
+      <button class="genre-btn" onclick="loadGenre('35', 'Comedy')">Comedy</button>
+      <button class="genre-btn" onclick="loadGenre('80', 'Crime')">Crime</button>
+      <button class="genre-btn" onclick="loadGenre('18', 'Drama')">Drama</button>
+      <button class="genre-btn" onclick="loadGenre('14', 'Fantasy')">Fantasy</button>
+      <button class="genre-btn" onclick="loadGenre('878', 'Sci-Fi')">Sci-Fi</button>
+      <button class="genre-btn" onclick="loadGenre('53', 'Thriller')">Thriller</button>
+    </div>
+  </section>
 
-
-  <!-- Genre Results Display -->
-   <!-- 
+  <!-- Temporarily Hidden Genre Results Section -->
+  <!--
   <section class="genre-display">
     <h2 id="genre-title">Select a Genre</h2>
     <div class="genre-results">
@@ -73,7 +72,7 @@
     </div>
     <div class="pagination" id="pagination"></div>
   </section>
--->
+  -->
 
   <!-- Modal -->
   <div class="modal" id="modal">
