@@ -1,8 +1,9 @@
-/* === GENRE BUTTONS ONLY === */
 .genre-buttons {
   padding: 10px 20px;
   background: #111;
   overflow-x: auto;
+  width: 100%;              /* Ensure it spans full screen */
+  box-sizing: border-box;   /* Include padding in width */
 }
 
 .genre-list {
