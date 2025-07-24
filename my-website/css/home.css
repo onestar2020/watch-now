@@ -351,14 +351,15 @@ body {
 
 .genre-list {
   display: flex;
-  flex-wrap: nowrap; /* Prevents wrapping */
+  flex-wrap: nowrap;
   gap: 12px;
-  width: max-content; /* Keeps buttons in one row */
+  width: max-content;
   scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
 }
 
 .genre-list::-webkit-scrollbar {
-  display: none; /* Hide scrollbar for cleaner UI */
+  display: none;
 }
 
 .genre-btn {
