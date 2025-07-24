@@ -386,11 +386,14 @@ body {
   gap: 16px;
   padding: 20px;
   scrollbar-width: none;
-  width: max-content;
+  width: max-content; /* ← Correct placement */
 }
-.genre-row::-webkit-scrollbar {
-  display: none;
+
+.genre-results {
+  overflow-x: auto;
+  width: 100%;
 }
+
 
 /* === INDIVIDUAL MOVIE CARD === */
 .genre-card {
