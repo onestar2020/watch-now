@@ -1,6 +1,6 @@
 /* genres.css */
 
-/* Wrap buttons correctly */
+/* === GENRE BUTTONS CONTAINER === */
 .genre-buttons .genre-list {
   display: flex;
   flex-wrap: nowrap;
@@ -8,12 +8,14 @@
   gap: 12px;
   padding: 0 20px;
   scrollbar-width: none;
-}
-.genre-buttons .genre-list::-webkit-scrollbar {
-  display: none;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on mobile */
 }
 
-/* Stronger selector for genre buttons only */
+.genre-buttons .genre-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+/* === GENRE BUTTONS === */
 .genre-buttons .genre-btn {
   flex: 0 0 auto;
   padding: 12px 20px;
@@ -24,11 +26,19 @@
   font-weight: 600;
   font-size: 0.95rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease;
   white-space: nowrap;
 }
 
 .genre-buttons .genre-btn:hover {
   background: linear-gradient(to right, #b81d24, #e50914);
   transform: scale(1.05);
+}
+
+/* === RESPONSIVE: MOBILE ADJUSTMENTS === */
+@media (max-width: 600px) {
+  .genre-buttons .genre-btn {
+    padding: 10px 16px;
+    font-size: 0.85rem;
+  }
 }
