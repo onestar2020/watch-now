@@ -7,6 +7,7 @@
 
   <!-- Styles -->
   <link rel="stylesheet" href="css/home.css">
+  <link rel="stylesheet" href="css/genres.css"> <!-- ✅ Added this -->
   <link rel="preload" href="css/home.css" as="style">
 
   <!-- Manifest & Fonts -->
@@ -15,90 +16,8 @@
 
   <!-- Script -->
   <script src="js/home.js" defer></script>
-
-  <!-- Inline Styles -->
-  <style>
-    /* Genre Button Section */
-    .genre-buttons {
-      margin: 20px 0;
-      padding: 10px 20px;
-      background: #111;
-    }
-    .genre-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-    .genre-btn {
-      padding: 10px 20px;
-      background-color: #222;
-      color: #fff;
-      border: 1px solid #333;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s;
-    }
-    .genre-btn:hover {
-      background-color: #e50914;
-    }
-
-    /* Genre Movies */
-    .genre-display {
-      margin-top: 30px;
-    }
-    .genre-results {
-      overflow-x: auto;
-    }
-    .genre-row {
-      display: flex;
-      gap: 15px;
-      padding: 20px;
-      overflow-x: auto;
-      scrollbar-width: none;
-    }
-    .genre-row::-webkit-scrollbar {
-      display: none;
-    }
-    .genre-card {
-      background-color: #222;
-      border-radius: 8px;
-      padding: 10px;
-      color: white;
-      min-width: 200px;
-      flex-shrink: 0;
-      cursor: pointer;
-    }
-    .genre-card img {
-      width: 100%;
-      border-radius: 5px;
-    }
-
-    /* Pagination */
-    .pagination {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding-bottom: 30px;
-    }
-    .pagination button {
-      padding: 10px 16px;
-      font-size: 14px;
-      border: none;
-      border-radius: 4px;
-      background-color: #e50914;
-      color: #fff;
-      cursor: pointer;
-    }
-    .pagination .page-label {
-      padding: 10px 16px;
-      font-size: 14px;
-      background-color: #333;
-      color: #fff;
-      border-radius: 4px;
-      cursor: default;
-    }
-  </style>
 </head>
+
 <body>
   <!-- Navbar -->
   <header class="navbar">
