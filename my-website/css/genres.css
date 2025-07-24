@@ -1,4 +1,4 @@
-/* === NETFLIX STYLE GENRE BUTTONS (FULL-WIDTH SCROLLABLE) === */
+/* === FIXED NETFLIX-STYLE GENRE BUTTONS - LEFT ALIGNED, SCROLLABLE === */
 .genre-buttons {
   width: 100%;
   padding: 20px 0;
@@ -8,22 +8,19 @@
 
 .genre-list {
   display: flex !important;
-  gap: 12px;
-  flex-wrap: nowrap !important;
-  overflow-x: auto !important;
-  padding: 0 0 0 20px !important;
-  margin: 0 !important;
-  width: 100% !important;
   justify-content: flex-start !important;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  padding: 0 0 0 20px;
+  margin: 0;
+  width: 100%;
   scrollbar-width: none;
 }
+
 .genre-list::-webkit-scrollbar {
   display: none;
-}
-
-
-.genre-list::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
 }
 
 .genre-btn {
@@ -38,13 +35,11 @@
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/* Hover effect */
 .genre-btn:hover {
   background-color: #e50914;
   transform: scale(1.05);
 }
 
-/* Active effect */
 .genre-btn:active {
   background-color: #b00610;
   transform: scale(0.98);
