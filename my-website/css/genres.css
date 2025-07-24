@@ -1,37 +1,34 @@
-.genre-buttons {
-  padding: 10px 20px;
-  background: #111;
-  overflow-x: auto;
-  width: 100%;              /* Ensure it spans full screen */
-  box-sizing: border-box;   /* Include padding in width */
-}
+/* genres.css */
 
-.genre-list {
+/* Wrap buttons correctly */
+.genre-buttons .genre-list {
   display: flex;
   flex-wrap: nowrap;
+  overflow-x: auto;
   gap: 12px;
-  width: max-content;
+  padding: 0 20px;
   scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
 }
-
-.genre-list::-webkit-scrollbar {
+.genre-buttons .genre-list::-webkit-scrollbar {
   display: none;
 }
 
-.genre-btn {
+/* Stronger selector for genre buttons only */
+.genre-buttons .genre-btn {
   flex: 0 0 auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #222;
+  padding: 12px 20px;
+  background: linear-gradient(to right, #e50914, #b81d24);
+  border: none;
+  border-radius: 30px;
   color: #fff;
-  border: 1px solid #333;
-  border-radius: 5px;
+  font-weight: 600;
+  font-size: 0.95rem;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: background 0.3s ease;
   white-space: nowrap;
 }
 
-.genre-btn:hover {
-  background-color: #e50914;
+.genre-buttons .genre-btn:hover {
+  background: linear-gradient(to right, #b81d24, #e50914);
+  transform: scale(1.05);
 }
