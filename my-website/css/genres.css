@@ -1,9 +1,9 @@
-/* === NETFLIX STYLE GENRE BUTTONS (HORIZONTAL SCROLL) === */
+/* === NETFLIX STYLE GENRE BUTTONS (FULL-WIDTH SCROLLABLE) === */
 .genre-buttons {
   width: 100%;
   padding: 20px 0;
   background-color: #111;
-  overflow-x: auto;
+  overflow-x: hidden;
 }
 
 .genre-list {
@@ -11,7 +11,8 @@
   gap: 12px;
   flex-wrap: nowrap;
   overflow-x: auto;
-  padding: 0 20px;
+  padding: 0 0 0 20px; /* left padding only */
+  margin: 0;
   width: 100%;
   scrollbar-width: none; /* Firefox */
 }
