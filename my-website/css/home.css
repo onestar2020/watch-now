@@ -344,39 +344,21 @@ body {
 
 /* === GENRE NAVIGATION === */
 .genre-buttons {
-  padding: 10px 20px;
-  background: #111;
+  width: 100%;
   overflow-x: auto;
+  padding: 12px 20px;
+  background: #111;
+  scrollbar-width: none;
+}
+
+.genre-buttons::-webkit-scrollbar {
+  display: none;
 }
 
 .genre-list {
   display: flex;
-  flex-wrap: nowrap;
   gap: 12px;
   width: max-content;
-  scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
-}
-
-.genre-list::-webkit-scrollbar {
-  display: none;
-}
-
-.genre-btn {
-  flex: 0 0 auto;
-  padding: 10px 20px;
-  font-size: 16px;
-  background-color: #222;
-  color: #fff;
-  border: 1px solid #333;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s;
-  white-space: nowrap;
-}
-
-.genre-btn:hover {
-  background-color: #e50914;
 }
 
 
