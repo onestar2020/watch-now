@@ -343,41 +343,41 @@ body {
 }
 
 /* === GENRE NAVIGATION === */
-.genre-nav {
-  display: flex;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+.genre-buttons {
+  padding: 10px 20px;
+  background: #111;
   overflow-x: auto;
-  white-space: nowrap;
-  background-color: rgba(0, 0, 0, 0.4);
-  backdrop-filter: blur(8px);
-  border-bottom: 1px solid #333;
-  padding: 12px 20px;
-  margin: 0;
+}
+
+.genre-list {
+  display: flex;
+  flex-wrap: nowrap; /* Prevents wrapping */
+  gap: 12px;
+  width: max-content; /* Keeps buttons in one row */
   scrollbar-width: none;
-  -webkit-overflow-scrolling: touch;
 }
-.genre-nav::-webkit-scrollbar {
-  display: none;
+
+.genre-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for cleaner UI */
 }
-.genre-button {
+
+.genre-btn {
   flex: 0 0 auto;
-  padding: 14px 24px;
+  padding: 10px 20px;
   font-size: 16px;
-  border-radius: 20px;
-  background: rgba(255, 255, 255, 0.05);
+  background-color: #222;
   color: #fff;
-  border: none;
-  margin-right: 10px;
+  border: 1px solid #333;
+  border-radius: 5px;
   cursor: pointer;
-  text-align: center;
+  transition: background 0.3s;
   white-space: nowrap;
-  transition: all 0.3s ease;
-  min-width: max-content;
 }
-.genre-button:hover {
-  background: rgba(255, 255, 255, 0.1);
+
+.genre-btn:hover {
+  background-color: #e50914;
 }
+
 
 /* === HORIZONTAL MOVIE LIST === */
 .genre-row {
